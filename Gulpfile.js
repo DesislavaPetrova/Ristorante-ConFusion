@@ -63,11 +63,11 @@ gulp.task('usemin', function() {
         return stream
         .pipe(usemin({
             css: [rev()],
-            html: [ function() { return htmlmin({ collapseWhitespace: true })}],
+            html: [ function() { return htmlmin({ collapseWhitespace: true });}],
             js: [ uglify(), rev()],
             inlinejs: [ uglify()],
             inlinecss: [ cleanCss(), 'concat']
-        }))
+        }));
     }))
     .pipe(gulp.dest('dist/'));
 });
